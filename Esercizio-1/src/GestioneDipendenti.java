@@ -17,9 +17,18 @@ public class GestioneDipendenti {
         arrDipendenti[1] = Andrea;
         arrDipendenti[2] = Gianni;
         arrDipendenti[3] = Matteo;
+
+        System.out.println("----------Prima della promozione----------");
+        System.out.println(Alfonso.toString());
+        System.out.println(Andrea.toString());
+        System.out.println(Gianni.toString());
+        System.out.println(Matteo.toString());
+
         Andrea.Promuovi();
         Gianni.Promuovi();
 
+
+        System.out.println("----------Dopo la promozione----------");
         System.out.println(Alfonso.toString());
         System.out.println(Andrea.toString());
         System.out.println(Gianni.toString());

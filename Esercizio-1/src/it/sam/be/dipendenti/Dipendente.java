@@ -66,7 +66,7 @@ public class Dipendente {
             this.stipendio = (stipendioBase * 1.2);
         } else if (Livello.equals("IMPIEGATO")) {
             Livello = "QUADRO";
-            this.stipendio = (stipendioBase * 1.2);
+            this.stipendio = (stipendioBase * 1.5);
         } else if (Livello.equals("QUADRO")) {
             Livello = "DIRIGENTE";
             this.stipendio = (stipendioBase * 2);
