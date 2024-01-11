@@ -1,13 +1,16 @@
+import it.sam.be.dipendenti.Dipartimento;
 import it.sam.be.dipendenti.Dipendente;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
+
+
     public static void main(String[] args) {
 
         System.out.println("Esercizio 1");
 
-        Dipendente Piero = new Dipendente("AAA00023", "PRODUZIONE");
+        Dipendente Piero = new Dipendente("AAA00023", Dipartimento.PRODUZIONE);
 
         System.out.println( Piero.getStipendio());
         System.out.println(Piero.toString());

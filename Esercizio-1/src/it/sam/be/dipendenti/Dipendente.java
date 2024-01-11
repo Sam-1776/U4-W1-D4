@@ -5,19 +5,19 @@ public class Dipendente {
     private String matricola;
     private double stipendio;
     private float importoOrarioStraordinario;
-    private String Livello;
-    private String Dipartimento;
+    private Livello Livello;
+    private Dipartimento Dipartimento;
 
 
-    public Dipendente(String matricola, String dipartimento) {
+    public Dipendente(String matricola, Dipartimento dipartimento) {
         this.matricola = matricola;
         this.stipendio = stipendioBase;
         this.importoOrarioStraordinario = 30;
-        Livello = "OPERAIO";
+        Livello = it.sam.be.dipendenti.Livello.OPERAIO;
         Dipartimento = dipartimento;
     }
 
-    public Dipendente(String matricola, double stipendio, float importoOrarioStraordinario, String livello, String dipartimento) {
+    public Dipendente(String matricola, double stipendio, float importoOrarioStraordinario, Livello livello, Dipartimento dipartimento) {
         this.matricola = matricola;
         this.stipendio = stipendio;
         this.importoOrarioStraordinario = importoOrarioStraordinario;
@@ -37,7 +37,7 @@ public class Dipendente {
         return stipendio;
     }
 
-    public String getLivello() {
+    public Livello getLivello() {
         return Livello;
     }
 
@@ -45,7 +45,7 @@ public class Dipendente {
         this.importoOrarioStraordinario = importoOrarioStraordinario;
     }
 
-    public void setDipartimento(String dipartimento) {
+    public void setDipartimento(Dipartimento dipartimento) {
         Dipartimento = dipartimento;
     }
 
@@ -60,15 +60,15 @@ public class Dipendente {
                 '}';
     }
 
-    public String Promuovi(){
-        if (Livello.equals("OPERAIO")) {
-            Livello = "IMPIEGATO";
+    public Livello Promuovi(){
+        if (Livello == it.sam.be.dipendenti.Livello.OPERAIO) {
+            Livello = it.sam.be.dipendenti.Livello.valueOf("IMPIEGATO");
             this.stipendio = (stipendioBase * 1.2);
-        } else if (Livello.equals("IMPIEGATO")) {
-            Livello = "QUADRO";
+        } else if (Livello == it.sam.be.dipendenti.Livello.IMPIEGATO) {
+            Livello = it.sam.be.dipendenti.Livello.valueOf("QUADRO");
             this.stipendio = (stipendioBase * 1.5);
-        } else if (Livello.equals("QUADRO")) {
-            Livello = "DIRIGENTE";
+        } else if (Livello == it.sam.be.dipendenti.Livello.QUADRO) {
+            Livello = it.sam.be.dipendenti.Livello.valueOf("DIRIGENTE");
             this.stipendio = (stipendioBase * 2);
         }else {
             System.out.println("Un dirigente non si può promuovere");
